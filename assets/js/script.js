@@ -47,6 +47,11 @@ var retrieveText = function(text) {
     return localStorage.getItem(text);
 };
 
+// refresh page every 5sec
+setInterval(function() {
+    colorSchedule();
+    updateTime();
+}, 5000);
 
 
 updateTime();
