@@ -8,7 +8,7 @@ function updateTime() {
 var colorSchedule = function() {
     // get current time
     var currentHour = moment().format("k");
-    for (i = 8; i <= 17; i++) {
+    for (i = 9; i <= 17; i++) {
         // remove old classes 
         $(".schdeule" + i).removeClass("past present future");
 
@@ -25,7 +25,30 @@ var colorSchedule = function() {
     };
 };
 
+//save to localStorage
+$(".time-block").on("click", ".saveBtn", function() {
+    var hour = $(this).parent().attr("id");
+    var text = $(this).siblings(".description").val();
+    localStorage.setItem(hour, text);
+});
+
+// load from local storage to page
+var loadSchedule = function(text) {
+    for (i = 9; i <= 17; i++) {
+        $(".schedule" + i)[0].value = retrieveText("schedule" + i);
+    };
+};
+
+//retrieve from localStorage
+var retrieveText = function(text) {
+    if (!localStorage.getItem(text)) {
+        return "";
+    }
+    return localStorage.getItem(text);
+};
+
 
 
 updateTime();
 colorSchedule();
+loadSchedule();
