@@ -12,4 +12,4 @@
 
 [Website URL](https://dimas082711.github.io/daily-planner/)
 
-![ALT txt](https://i.ibb.co/9qCXhLH/work-day-planner.png)
+![ALT txt](https://i.ibb.co/10bNN7y/workday.png)
